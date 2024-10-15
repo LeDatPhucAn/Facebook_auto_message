@@ -10,72 +10,16 @@ import json
 
 # List of Facebook page URLs for sending messages
 facebook_pages = [
-    # 'https://www.facebook.com/acetvn',
+    # Example page
     'https://www.facebook.com/HelloEnglishDaLat/',
     'https://www.facebook.com/jlmeducation/',
-    # "https://www.facebook.com/englishcoachvn/",
-    # "https://www.facebook.com/realieltsvn/",
-    # "https://www.facebook.com/universal.edu.vn/",
-    # "https://www.facebook.com/anhnguvatc/?_rdr",
-    # 'https://www.facebook.com/Mikaeducation',
-    # 'https://www.facebook.com/bluemountain.edu',
-    # 'https://www.facebook.com/summit.edu',
-    # 'https://www.facebook.com/LanguageLink/',
-    # 'https://www.facebook.com/simsonenglish',
-    # 'https://www.facebook.com/ieltsvietop',
-    # 'https://www.facebook.com/mshoatoeic',
-    # 'https://www.facebook.com/AtlanticFiveStarEnglish/',
-    # 'https://www.facebook.com/72plusgolfacademy/',
-    # 'https://www.facebook.com/tienganhonlineNativeX',
-    # 'https://www.facebook.com/AmericanlinksCenter/',
-    # 'https://www.facebook.com/CleverAcademy.vn',
-    # 'https://www.facebook.com/ipu.ielts',
-    # 'https://www.facebook.com/KTDCIELTS/',
-    # 'https://www.facebook.com/PasalTraining.Hanoi/',
-    # 'https://www.facebook.com/ippielts',
-    # 'https://www.facebook.com/tienganhdentuanhquoc',
-    # 'https://www.facebook.com/ieltsvietop',
-    # 'https://www.facebook.com/Learningenglish.hacentre',
-    # 'https://www.facebook.com/fishersuperkids.academy',
-    # 'https://www.facebook.com/iclc1',
-    'https://www.facebook.com/PasalEnglish',
-    # 'https://www.facebook.com/iseistudyenglish/',
-    # 'https://www.facebook.com/tuyendungoceanedu',
-    # 'https://www.facebook.com/Etestvietnam/',
-    # 'https://www.facebook.com/cleverjunior.vn',
-    # 'https://www.facebook.com/jaxtinaenglish',
-    # 'https://www.facebook.com/joloenglish',
-    # 'https://www.facebook.com/dolenglish.binhthanh/',
-    # 'https://www.facebook.com/ieltswithdatio/',
-    # 'https://www.facebook.com/Aland.Cambridge',
-    # 'https://www.facebook.com/itrustenglishacademy/',
-    # 'https://www.facebook.com/BetterEnglishVN/',
-    # 'https://www.facebook.com/camlink.cambridge',
-    # 'https://www.facebook.com/LanguageLink/',
-    # 'https://www.facebook.com/dolenglish.ieltsdinhluc',
-    # 'https://www.facebook.com/YOLAEducation',
-    # 'https://www.facebook.com/ilavn',
-    # 'https://www.facebook.com/theieltsworkshop',
-    # 'https://www.facebook.com/anhnguvatccantho/',
-    # 'https://www.facebook.com/E2.Everest.Education/',
-    # 'https://www.facebook.com/AnhNguQuocTe.IES/',
-    # 'https://www.facebook.com/FutureEdVN',
-    # 'https://www.facebook.com/AnhvanhoiVietMy.VUS',
-    # 'https://www.facebook.com/AnhNguToiTuHoc.Toeic.Ielts',
-    # 'https://www.facebook.com/mc.ielts/',
-    # 'https://www.facebook.com/OEA.ENGLISH/',
-    # 'https://www.facebook.com/zim.school/',
-    # 'https://www.facebook.com/tienganhnghenoi/',
-    # 'https://www.facebook.com/amslink',
-
-  # Example page
     # Add more page URLs here
 ]
 
 responses = []
 # Initialize the WebDriver with your Chrome user profile
 options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=C:\\Users\\2015p\\AppData\\Local\\Google\\Chrome\\User Data\\")  # Adjust path
+options.add_argument("user-data-dir=Your Chrome Path here")  # Adjust path
 # Add this line to avoid Chrome's 'User data directory is already in use' error
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
