@@ -47,7 +47,7 @@ def log_failure(page):
 
 # Initialize the WebDriver with your Chrome user profile
 options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=Your Chrome Path here")  # Adjust path
+options.add_argument("user-data-dir=Your Chrome Path here")  # Adjust path, Example: C:\\Users\\2015p\\AppData\\Local\\Google\\Chrome\\User Data\\
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
