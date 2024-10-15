@@ -19,7 +19,7 @@ facebook_pages = [
 responses = []
 # Initialize the WebDriver with your Chrome user profile
 options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=Your Chrome Path here")  # Adjust path
+options.add_argument("user-data-dir=Your Chrome Path here")  # Adjust path, Example: C:\\Users\\2015p\\AppData\\Local\\Google\\Chrome\\User Data\\
 # Add this line to avoid Chrome's 'User data directory is already in use' error
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
