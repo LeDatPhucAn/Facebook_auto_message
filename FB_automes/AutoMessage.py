@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 
-
 import time
 import random
 # List of Facebook page URLs for sending messages
@@ -48,7 +47,7 @@ def log_failure(page):
 
 # Initialize the WebDriver with your Chrome user profile
 options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=C:\\Users\\2015p\\AppData\\Local\\Google\\Chrome\\User Data\\")  # Adjust path
+options.add_argument("user-data-dir=C:Your Chrome Path here")  # Adjust path
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
@@ -273,7 +272,7 @@ def simulate_mistake():
     if random.random() <= 0.05:  # 5% chance of making a mistake
         print("Simulating mistake: refreshing the page.")
         driver.refresh()
-        random_delay(5, 10)  # Delay after the "mistake"
+        random_delay(4, 6)  # Delay after the "mistake"
 # Check which pages have already been messaged
 already_messaged_pages = read_logged_pages()
 
@@ -285,14 +284,14 @@ for page in facebook_pages:
     try:
         random_scroll()  # Random scroll before
         driver.get(page)
-        random_delay(5, 10)  # Wait for the page to load
+        random_delay(4, 6)  # Wait for the page to load
 
         simulate_mistake()  # Occasionally simulate a mistake
 
         # Check if the Message button is available and click it
         try:
             random_delay(2, 5)  # Random delay before clicking
-            message_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Message']")))
+            message_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Message']"))) # might be 'message'
             random_click(message_button)
         except Exception as e:
             print(f"No 'Message' button available for {page}: {e}")
@@ -302,7 +301,7 @@ for page in facebook_pages:
         random_delay(3,5)
         # Check if there is a "Get Started" button and click it
         try:
-            get_started_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@role='button' and text()='Get Started']")))
+            get_started_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@role='button' and text()='Get Started']"))) # might be 'Get_started'
             random_click(get_started_button)
             print(f"Clicked 'Get Started' button on {page}")
             random_delay(2, 5)
@@ -314,20 +313,10 @@ for page in facebook_pages:
         # Send each message in the selected version with simulated typing and random delays
         try:
             for word in random_version:
-                message_box = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@aria-label='Message']")))
+                message_box = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@aria-label='Message']"))) # might be 'message'
                 slow_typing(message_box, add_typo(word))  # Simulate typing with small variations
-                enter_button = driver.find_element(By.XPATH, "//div[@aria-label='Press Enter to send']")
-                random_click(enter_button)  #
-            
-                # Check for "Couldn't send" condition
-            try:
-                error_message = driver.find_element(By.XPATH, "//span[contains(@class, 'xdj266r') and text()='Couldn't send']")
-                if error_message:
-                    print(f"Detected 'couldn't send' on {page}, stopping process.")
-                    log_failure(page)
-                    driver.quit()  # Stop the process
-            except Exception:
-                pass  # No specific "couldn't send" message detected
+                enter_button = driver.find_element(By.XPATH, "//div[@aria-label='Press Enter to send']") # migth be 'Press enter to send'
+                random_click(enter_button)  
             
             # Log the successful page
             log_success(page)
@@ -336,10 +325,10 @@ for page in facebook_pages:
             print(f"Error sending message to {page}: {e}")
                         # Log the successful page
 
-        exit_button =  driver.find_element(By.XPATH, "//div[@aria-label='Close chat']")
+        exit_button =  driver.find_element(By.XPATH, "//div[@aria-label='Close chat']") # might be 'close chat'
         exit_button.click() # click on the button
         # Wait for a short period before moving to the next page
-        time.sleep(9)
+        time.sleep(7)
 
     except Exception as e:
         print(f"An error occurred on page {page}: {e}")
