@@ -1,3 +1,7 @@
+----Prerequisites----
+You must log into your facebook account in Google Chrome beforehand
+Close Google Chrome before activating the code 
+
 -----Guidelines-----
 Open the Automessage.py file in your code runner (VScode, PyCharm,...), there will be customizable areas:
 Facebook_pages: put in the facebook links to profiles you want to message
