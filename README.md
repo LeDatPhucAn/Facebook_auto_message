@@ -6,7 +6,7 @@
 
 ### 1. Customizable Areas in `Automessage.py`
 - **Facebook_pages:** Insert the Facebook profile or page links that you want to message.
-- **Chrome Profile Path:** Find `options.add_argument("user-data-dir=C:Your Chrome Path here")` and replace "Your Chrome Path here" with your actual Chrome path (found by typing `chrome://version` in the Chrome search bar and copying the Profile Path).
+- **Chrome Profile Path:** Find `options.add_argument("user-data-dir=Your Chrome Path here")` and replace "Your Chrome Path here" with your actual Chrome path (found by typing `chrome://version` in the Chrome search bar and copying the Profile Path).
 - **message_versions:** Insert the different versions of the messages you want to send. Separate each message version with square brackets `[ ]`. There are examples in the code.
 - **random_delay(a,b) and time.sleep(x):** Adjust these numbers for delays based on your preferences. `a` and `b` are the time range for random delays, and `x` is the specific delay time.
 
@@ -23,3 +23,9 @@ If the script doesn't click the message or close chat button correctly, you can 
   ```python
   message_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Message']"))) 
   # might need to change 'Message' to 'message'
+  enter_button = driver.find_element(By.XPATH, "//div[@aria-label='Press Enter to send']")
+  # might need to change 'Press Enter to send' to 'Press enter to send'
+  exit_button = driver.find_element(By.XPATH, "//div[@aria-label='Close chat']")
+  # might need to change 'Close chat' to 'close chat'
+
+
