@@ -1,22 +1,25 @@
-----Prerequisites----
-You must log into your facebook account in Google Chrome beforehand
-Close Google Chrome before activating the code 
+## Prerequisites
+1. You must log into your Facebook account in Google Chrome beforehand.
+2. Close Google Chrome before activating the code.
 
------Guidelines-----
- * Open the Automessage.py file in your code runner (VScode, PyCharm,...), there will be customizable areas:
-Facebook_pages: put in the facebook links to profiles you want to message
-Look for options.add_argument("user-data-dir=C:Your Chrome Path here") and put in your chrome path (find it by typing chrome://version in the searchbar and get the Profile Path)
-message_versions: put in the messages you want to send, separate each message version with [ ] (there are examples in the code for you)
-random_delay(a,b) and time.sleep(x): you can adjust the delays to your liking by changing the number in side the brackets ()
- 
- * Gather responses from the people or fanpages you messaged:
-Open Response.py and put in the facebook pages you want to retrieve the responses from
-Run the program
-Check the Responses in responses.json
+## Guidelines
 
----Potential Errors---
-if it doesn't click the message or close chat button you can adjust:
-message_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Message']"))) # might be 'message'
-message_box = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@aria-label='Message']"))) # might be 'message'
-enter_button = driver.find_element(By.XPATH, "//div[@aria-label='Press Enter to send']") # might be 'Press enter to send'
-exit_button =  driver.find_element(By.XPATH, "//div[@aria-label='Close chat']") # might be 'close chat'
+### 1. Customizable Areas in `Automessage.py`
+- **Facebook_pages:** Insert the Facebook profile or page links that you want to message.
+- **Chrome Profile Path:** Find `options.add_argument("user-data-dir=C:Your Chrome Path here")` and replace "Your Chrome Path here" with your actual Chrome path (found by typing `chrome://version` in the Chrome search bar and copying the Profile Path).
+- **message_versions:** Insert the different versions of the messages you want to send. Separate each message version with square brackets `[ ]`. There are examples in the code.
+- **random_delay(a,b) and time.sleep(x):** Adjust these numbers for delays based on your preferences. `a` and `b` are the time range for random delays, and `x` is the specific delay time.
+
+### 2. Gathering Responses
+- Open the `Response.py` file.
+- Insert the Facebook pages you want to retrieve responses from.
+- Run the program.
+- Responses will be saved in `responses.json`.
+
+## Potential Errors
+If the script doesn't click the message or close chat button correctly, you can adjust the following XPATH elements in the code:
+
+- **Message Button:**
+  ```python
+  message_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@aria-label='Message']"))) 
+  # might need to change 'Message' to 'message'
